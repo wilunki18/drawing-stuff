@@ -7,10 +7,10 @@ let led_x3 = 0;
 let led_x4 = 0;
 let start=true;
 let loading=true;
-let hp_blips = 1000;
+let hp_blips = 100;
 
 function startup() {
-    hp_blips = 1000
+    
     led.plot(led_x0, 0)
     led_x0 += 1
     led.plot(led_x1, 1)
@@ -30,24 +30,29 @@ function startup() {
     led.unplot(4,4)
     led.unplot(4,3)
 
-    pause(40)
-    if (start=true) {
+    pause(400)
+    if (start,loading) {
     basic.clearScreen()
-    start=false
+    
     }
     
-    basic.showIcon(IconNames.Heart)
-    pause(hp_blips)
+   
     
 }
 
 function hp() {
     
-    
+    while (loading) {
+
+    }
+    basic.showIcon(IconNames.Heart)
+    pause(hp_blips)
+    basic.clearScreen()
     
 }
 
 startup()
+pause(1000)
 hp()
 
 
